@@ -9,6 +9,7 @@ using XCZ;
 namespace Business
 {
     [DependsOn(
+        typeof(BusinessDomainModule),
         typeof(BusinessApplicationContractsModule),
         typeof(AbpHttpClientIdentityModelModule),
         typeof(AbpIdentityHttpApiClientModule),
@@ -22,7 +23,7 @@ namespace Business
         {
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<BusinessApplicationModule>();
+                options.AddMaps<BusinessApplicationAutoMapperProfile>();
             });
         }
 
